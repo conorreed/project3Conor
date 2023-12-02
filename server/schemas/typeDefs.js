@@ -1,9 +1,11 @@
+//TODO: double check save char logic
+
 const typeDefs = `
   type User {
     _id: ID!
     username: String!
     email: String!
-    savedChars: [Character]!
+    // savedChars: [Character]!
   }
 
   type Auth {
@@ -17,6 +19,8 @@ const typeDefs = `
     // level: Int
     health: Int
     attack: Int
+    image: String
+    //*image string is the href link path
     // defense: Int
   }
 
@@ -25,6 +29,8 @@ const typeDefs = `
     // level: Int
     health: Int
     attack: Int
+    image: String
+    //*image string is the href link path
     // defense: Int
   }
 
