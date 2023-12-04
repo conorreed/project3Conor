@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'; 
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,6 +7,11 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import SignUp from './pages/SignUp.jsx';
+import Footer from './components/Footer';
+import Header from './components/Header.jsx';
+import Login from './pages/Login.jsx';
+import Home from './pages/Home';
 // import Nav from './components/Nav';
 // import { StoreProvider } from './utils/GlobalState';
 
@@ -32,11 +37,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        {/* <StoreProvider> */}
-          <Outlet />
-        {/* </StoreProvider> */}
-      </div>
+      <Header/>
+      
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      <Footer/>
     </ApolloProvider>
   );
 }
