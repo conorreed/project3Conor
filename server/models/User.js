@@ -21,7 +21,13 @@ const userSchema = new Schema({
     },
 
     //TODO: double check save character logic
-
+    //maybe characters: [Character.schema],
+    character: [
+      {
+    type: Schema.Types.ObjectId,
+    ref: 'Character',
+    }
+    ]
   });
 
   userSchema.pre('save', async function (next) {

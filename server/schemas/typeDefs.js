@@ -5,6 +5,7 @@ const typeDefs = `
     _id: ID!
     username: String!
     email: String!
+    character: [Character]!
   }
 
   type Auth {
@@ -30,14 +31,26 @@ const typeDefs = `
 
   type Query {
     users: [User]
-    singleUser(username: String!): User
+    singleUser(_id: ID!): User
     characters: [Character]
     singleCharacter(_id: ID!): Character
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    
+    addUser(
+      username: String!
+      email: String!
+      password: String!
+    ): Auth
+
+    updateUser(
+      username: String
+      email: String
+      password: String
+      ) :User
+    
     saveCharacter(username: String!, newCharacter: inputCharacter!): Character
   }
   
