@@ -23,13 +23,20 @@ const userSchema = new Schema({
 
     //TODO: double check save character logic
     //maybe characters: [Character.schema],
-    // characters: [
-    //   {
-    // type: Schema.Types.ObjectId,
-    // ref: 'Characters',
-    // }
-    // ]
-  });
+    characters: [
+      {
+    type: Schema.Types.ObjectId,
+    ref: 'Characters',
+    }
+    ]
+  },
+    // set this to use virtual below
+    {
+      toJSON: {
+        virtuals: true,
+      },
+    }
+  );
 
   userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {

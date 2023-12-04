@@ -1,22 +1,13 @@
 //TODO: double check save char logic
-// type User {
-//   _id: ID!
-//   username: String!
-//   email: String!
-//   characters: [Character]!
-// }
-// type Query {
-//   users: [User]
-//   singleUser(_id: ID!): User
-//   characters: [Character]
-//   singleCharacter(_id: ID!): Character
-// }
+
 
 const typeDefs = `
   type User {
     _id: ID!
     username: String!
     email: String!
+    password: String!
+    characters: [Character]!
     
   }
 
@@ -46,6 +37,7 @@ const typeDefs = `
     singleUser(_id: ID!): User
     
     singleCharacter(_id: ID!): Character
+    getAllCharacters: [Character]
   }
 
   type Mutation {
@@ -62,6 +54,12 @@ const typeDefs = `
       email: String
       password: String
       ) :User
+
+      deleteUser(
+        username: String
+        email: String
+        password: String
+        ) :User
     
     saveCharacter(username: String!, newCharacter: inputCharacter!): Character
   }
