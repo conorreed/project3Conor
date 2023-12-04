@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
-import React from 'react';
-import Footer from '../components/Footer.jsx';
-import SignUp from './SignUp.jsx';
-import Header from '../components/Header.jsx';
+// import React from 'react';
+// import Footer from '../components/Footer.jsx';
+// import SignUp from './SignUp.jsx';
+// import Header from '../components/Header.jsx';
 // import '../app.css';
 
 const Home = () => {
