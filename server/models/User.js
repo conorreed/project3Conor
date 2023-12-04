@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+
 const userSchema = new Schema({
     username: {
       type: String,
@@ -22,12 +23,12 @@ const userSchema = new Schema({
 
     //TODO: double check save character logic
     //maybe characters: [Character.schema],
-    character: [
-      {
-    type: Schema.Types.ObjectId,
-    ref: 'Character',
-    }
-    ]
+    // characters: [
+    //   {
+    // type: Schema.Types.ObjectId,
+    // ref: 'Characters',
+    // }
+    // ]
   });
 
   userSchema.pre('save', async function (next) {

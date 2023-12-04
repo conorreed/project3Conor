@@ -1,11 +1,23 @@
 //TODO: double check save char logic
+// type User {
+//   _id: ID!
+//   username: String!
+//   email: String!
+//   characters: [Character]!
+// }
+// type Query {
+//   users: [User]
+//   singleUser(_id: ID!): User
+//   characters: [Character]
+//   singleCharacter(_id: ID!): Character
+// }
 
 const typeDefs = `
   type User {
     _id: ID!
     username: String!
     email: String!
-    character: [Character]!
+    
   }
 
   type Auth {
@@ -32,7 +44,7 @@ const typeDefs = `
   type Query {
     users: [User]
     singleUser(_id: ID!): User
-    characters: [Character]
+    
     singleCharacter(_id: ID!): Character
   }
 

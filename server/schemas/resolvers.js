@@ -13,7 +13,7 @@ const resolvers = {
 
         singleUser: async (parent, { _id }) => {
           return User.findById({_id})
-          .populate('characters');
+          // .populate('characters');
         },
 
 
@@ -30,13 +30,13 @@ const resolvers = {
       //not sure if we need this. prob just update character?
       updateUser: async (parent, args, context) => {
         // console.log(context);
-        if (context.user) {
-          return await User.findByIdAndUpdate(context.user._id, args, {
+        // if (context.user) {
+          return await User.findByIdAndUpdate({_id}, args, {
             new: true,
           });
-        }
+        // }
   
-        throw AuthenticationError;
+        // throw AuthenticationError;
       },
 
 
@@ -46,7 +46,7 @@ const resolvers = {
       //*    removeCharacter: async (parent, { ID }) => {
       //*    return Character.findOneAndDelete({ _id: ID });
       //*    },
-      
+
       //*or do i have to :
       // removeCharacter: async (parent, { _id }, context) => {
       //   if (context.user) {
