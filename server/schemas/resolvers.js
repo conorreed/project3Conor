@@ -6,6 +6,20 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user.id).populate({
+          path: 'orders.products',
+          populate: 'category',
+        });
+
+        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+
+        return user;
+      }
+
+      throw AuthenticationError;
+    },
 
 
   },
@@ -30,22 +44,24 @@ const resolvers = {
 
 
 
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    // login: async (parent, { email, password }) => {
+    //   const user = await User.findOne({ email });
 
-      if (!user) {
-        throw AuthenticationError;
-      }
+    //   if (!user) {
+    //     throw AuthenticationError;
+    //   }
 
-      const correctPw = await user.isCorrectPassword(password);
+    //   const correctPw = await user.isCorrectPassword(password);
 
-      if (!correctPw) {
-        throw AuthenticationError;
-      }
+    //   if (!correctPw) {
+    //     throw AuthenticationError;
+    //   }
 
-      const token = signToken(user);
+    //   const token = signToken(user);
 
-      return { token, user };
-    },
+    //   return { token, user };
+    // },
   },
 };
+
+// module.exports = resolvers;
