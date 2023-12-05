@@ -2,7 +2,7 @@
 
 const Lair = () => {
   return (
-    <div className="flex justify-content-center"> {/* centering background image */}
+    <div className="flex justify-content-center bg-slate-900"> {/* centering background image */}
       
 
       <div className=" lairBackground w-[100rem] h-[60rem] flex justify-content-center"> {/* supplying background image and flex parent  */}

@@ -8,10 +8,10 @@ const GameStart = () => {
         <p className="text-blue-100 mx-4">
           Alright so you play the game. Its very fun for you. Trust.
           <br />
-          Heres what you need to know:
+          Here&apos;s what you need to know:
         </p>
         <ul className="text-blue-100 m-5">
-          <li>Youre a monster</li>
+          <li>You&apos;re a monster</li>
           <li>Go hit things</li>
           <li>Attk button to attack</li>
           <li>Run button if you a baby</li>
