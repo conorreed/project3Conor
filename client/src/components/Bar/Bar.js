@@ -1,7 +1,7 @@
 // where we keep the "bar" component. Will have a max value, the actual value, and we can use it for xp, hp and notoriety bar
 import styles from './styles.module.css';
 
-export const Bar = ({ value, maxValue, label }) => (
+const Bar = ({ value, maxValue, label }) => (
   <div className={styles.main}>
     <div className={styles.label}>{label}</div>
     <div className={styles.max}>
@@ -12,3 +12,4 @@ export const Bar = ({ value, maxValue, label }) => (
     </div>
   </div>
 );
+export default Bar;
