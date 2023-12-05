@@ -1,1 +1,1 @@
-// where we can switch from the lair to the actual battle
+// where we can switch from the lair to the actual b
