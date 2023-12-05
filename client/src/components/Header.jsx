@@ -27,6 +27,15 @@ const Header = () => {
         <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
           <Link to="/login">Login</Link>
         </li>
+
+        {/* adding these just for ease of use. will remove later */}
+        <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <Link to="/GameStart">GameStart</Link></li>
+          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <Link to="/Lair">Lair</Link></li>
+          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <Link to="/Battle">Battle</Link></li>
+
       </ul>
       </nav>
 

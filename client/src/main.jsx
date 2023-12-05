@@ -11,6 +11,7 @@ import Login from './pages/Login.jsx';
 import ErrorPage from './pages/ErrorPage';
 import Lair from './pages/Lair.jsx';
 import GameStart from './pages/GameStart.jsx';
+import Battle from './pages/Battle.jsx';
 
 
 const router = createBrowserRouter([
@@ -43,10 +44,10 @@ const router = createBrowserRouter([
       //   path: 'SelectCharacter',
       //   element: <SignUp />,
       // },
-      // {
-      //   path: 'Battle',
-      //   element: <Battle />,
-      // },
+      {
+        path: 'Battle',
+        element: <Battle />,
+      },
     ],
   },
 ]);

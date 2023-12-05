@@ -8,7 +8,7 @@
 
 const Home = () => {
   return (
-    <div className=" flex flex-col justify-items-center text-center">
+    <div className=" flex flex-col justify-items-center text-center h-screen w-screen  text-blue-100 bg-gray-800">
       <h1>hello world</h1>
       <div className=" flex flex-row justify-content-center">
       <img src="/gif/monsters/ghost.gif" alt="ghost" />

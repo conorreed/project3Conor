@@ -1,15 +1,17 @@
+//TODO figure out why it hates apostrophes in the p tag and li tag
+
 const GameStart = () => {
   return (
     <main className="flex justify-center">
       <div className="bg-gray-800 min-h-screen min-w-full text-center pt-20">
         <h1 className="text-blue-100 mx-4 pb-4">Tutorial</h1>
         <p className="text-blue-100 mx-4">
-          Alright so you play the game. It's very fun for you. Trust.
+          Alright so you play the game. Its very fun for you. Trust.
           <br />
           Heres what you need to know:
         </p>
         <ul className="text-blue-100 m-5">
-          <li>You're a monster</li>
+          <li>Youre a monster</li>
           <li>Go hit things</li>
           <li>Attk button to attack</li>
           <li>Run button if you a baby</li>
