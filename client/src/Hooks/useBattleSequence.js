@@ -1,0 +1,1 @@
+// where the switch statement with ASYNC await will live. will basically handle all the cases for an Attack, Magic, or Heal
