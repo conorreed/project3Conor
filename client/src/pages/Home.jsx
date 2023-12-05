@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import { useQuery } from '@apollo/client';
 // import React from 'react';
 // import Footer from '../components/Footer.jsx';
@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className=" d-flex flex-column align-items-center ">
+    <div className=" flex flex-col justify-items-center text-center">
       <h1>hello world</h1>
-      <div className=" d-flex flex-row">
+      <div className=" flex flex-row justify-content-center">
       <img src="/gif/monsters/ghost.gif" alt="ghost" />
       <img src="/gif/monsters/skel.gif" alt="skel" />
       <img src="/gif/monsters/frog.gif" alt="frog" />
@@ -25,7 +25,7 @@ const Home = () => {
       </div>
       
 
-      <div><img src="/jankConceptArt.png" alt="concept art" /></div>
+      <div className=" flex justify-content-center"><img src="/jankConceptArt.png" alt="concept art" /></div>
       
     </div>
   );

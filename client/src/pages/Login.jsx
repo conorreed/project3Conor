@@ -1,5 +1,9 @@
 // Login.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
+// import { useMutation } from '@apollo/client';
+// import { Link } from 'react-router-dom';
+// import { LOGIN } from '../utils/mutations';
+// import Auth from '../utils/auth';
 
 const Login = () => {
   const [state, setState] = useState({
@@ -30,8 +34,8 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container login-container">
-      <form onSubmit={handleOnSubmit}>
+    <div className="form-container login-container h-screen w-screen  text-blue-100 bg-gray-800 flex items-center">
+      <form className="flex flex-col items-center" onSubmit={handleOnSubmit}>
         <h1>Login</h1>
         <span>Enter your credentials</span>
         <input
@@ -48,7 +52,13 @@ const Login = () => {
           value={state.password}
           onChange={handleChange}
         />
-        <button>Login</button>
+          <div className="relative inline-flex  group m-5">
+          <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt "></div>
+          <button className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer hover:scale-125 ease-in-out ">
+           
+            START
+          </button>
+        </div>
       </form>
     </div>
   );
