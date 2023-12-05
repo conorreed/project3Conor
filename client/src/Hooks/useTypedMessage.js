@@ -1,0 +1,1 @@
+// function that will allow text to be typed out rather than fully display
