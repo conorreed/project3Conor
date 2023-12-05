@@ -1,0 +1,1 @@
+// where logic will go for calculating damage done by attacks, magic attacks, and how much hp is healing
