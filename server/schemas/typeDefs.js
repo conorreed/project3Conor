@@ -24,13 +24,7 @@ const typeDefs = `
     image: String
   }
 
-  input inputCharacter {
-    name: String
-    health: Int
-    attack: Int
-    image: String
 
-  }
 
   type Query {
     users: [User]
@@ -60,10 +54,23 @@ const typeDefs = `
         email: String
         password: String
         ) :User
+
+        addCharacter(
+          userId: ID!,
+          characterId: ID!
+          ): User
     
-    saveCharacter(username: String!, newCharacter: inputCharacter!): Character
   }
   
 `
 
 module.exports = typeDefs;
+
+// input inputCharacter {
+//   name: String
+//   health: Int
+//   attack: Int
+//   image: String
+
+// }
+// saveCharacter(username: String!, newCharacter: inputCharacter!): Character

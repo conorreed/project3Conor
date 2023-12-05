@@ -35,3 +35,17 @@ mutation deleteUser($username: String) {
   }
 }
 `;
+
+export const ADD_CHARACTER = gql`
+mutation addCharacter($userId: ID!, $characterId: ID!) {
+  addCharacter(userId: $userId, characterId: $characterId) {
+    _id
+    characters {
+      _id
+    }
+    email
+    password
+    username
+  }
+}
+`
