@@ -16,8 +16,10 @@ class AuthService {
       const decoded = decode(token);
       if (decoded.exp < Date.now() / 1000) {
         return true;
-      } else return false;
+      } 
+      else return false;
     } catch (err) {
+      console.log(err)
       return false;
     }
   }
@@ -28,6 +30,7 @@ class AuthService {
   }
 
   login(idToken) {
+    console.log(idToken);
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 
