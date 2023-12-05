@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // where we do exports
 import styles from './styles.module.css';
 
