@@ -1,12 +1,17 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import './index.css'
+
 
 import App from './App.jsx';
 import Home from './pages/Home';
 import SignUp from './pages/SignUp.jsx';
 import Login from './pages/Login.jsx';
 import ErrorPage from './pages/ErrorPage';
+import Lair from './pages/Lair.jsx';
+import GameStart from './pages/GameStart.jsx';
+import Battle from './pages/Battle.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,18 +32,22 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login />,
       },
-      // {
-      //   path: 'Lair',
-      //   element: <Lair />,
-      // },
+      {
+        path: 'Lair',
+        element: <Lair />,
+      },
+      {
+        path: 'GameStart',
+        element: <GameStart />,
+      },
       // {
       //   path: 'SelectCharacter',
       //   element: <SignUp />,
       // },
-      // {
-      //   path: 'Battle',
-      //   element: <Battle />,
-      // },
+      {
+        path: 'Battle',
+        element: <Battle />,
+      },
     ],
   },
 ]);
