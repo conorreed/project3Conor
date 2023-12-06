@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 //TODO figure out why it hates apostrophes in the p tag and li tag
 import { Link } from 'react-router-dom';
 import { useTypedMessage } from '../Hooks';
