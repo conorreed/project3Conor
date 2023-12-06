@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 //xTODO figure out why it hates apostrophes in the p tag and li tag
 import { Link } from 'react-router-dom';
-import { useTypedMessage } from '../Hooks';
+import { useTypedMessage } from '../Hooks/useTypedMessage';
 
 const GameStart = () => {
   const tutorialMessage = "Alright so you play the game. Its very fun for you. Trust. Here's what you need to know:";

@@ -17,7 +17,7 @@ const Lair = () => {
           <div className=" flex mx-[25rem] p-10 h-[10rem]">
             <Link to="/Battle">
               <button className="shadow-lg bg-slate-300 cursor-pointer hover:scale-125 transition-all ease-in-out">
-              Bowser's Castle
+              Bowsers Castle
               </button>
             </Link>
           </div>
