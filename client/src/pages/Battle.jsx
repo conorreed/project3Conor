@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { wait } from "../shared/helpers"
 import { Link } from "react-router-dom";
-import '../app.css';
+
 
 // Card component with Health Bar
 const Card = ({ title, health, description }) => {
