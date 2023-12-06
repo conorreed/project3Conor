@@ -35,7 +35,7 @@ const Header = () => {
           {isLoggedIn ? (
             // Show Logout button if the user is logged in
             <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <button onClick={handleLogout}>Logout</button>
+              <a onClick={handleLogout}>Logout</a>
             </li>
           ) : (
             // Show Signup and Login buttons if the user is not logged in
