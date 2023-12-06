@@ -33,9 +33,16 @@ const Header = () => {
           </li>
           {isLoggedIn ? (
             // Show Logout button if the user is logged in
+            <>
             <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <a onClick={handleLogout}>Logout</a>
             </li>
+            <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Link to="/GameStart">GameStart</Link></li>
+          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Link to="/Lair">Lair</Link></li>
+          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <Link to="/Battle">Battle</Link></li></>
           ) : (
             // Show Signup and Login buttons if the user is not logged in
             <>
@@ -48,12 +55,6 @@ const Header = () => {
             </>
           )}
           {/* adding these just for ease of use. will remove later */}
-          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <Link to="/GameStart">GameStart</Link></li>
-          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <Link to="/Lair">Lair</Link></li>
-          <li className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-            <Link to="/Battle">Battle</Link></li>
         </ul>
       </nav>
     </header>
