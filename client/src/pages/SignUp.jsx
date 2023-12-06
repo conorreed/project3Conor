@@ -34,11 +34,11 @@ function Signup() {
   };
 // how to get link working to go to login page
   return (
-    <div className="container my-1">
+    <div className="form-container my-1 h-screen w-screen text-blue-100 bg-gray-800 flex items-center">
       <Link to="/login">← Go to Login</Link>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
+      <h1>Signup</h1>
+      <form className="flex flex-col items-center shadow-lg bg-[rgba(97,59,96,0.7)] p-10 rounded-xl my-5" onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="username">Username:</label>
           <input
@@ -69,8 +69,11 @@ function Signup() {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        <div className="relative inline-flex group m-5">
+          <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt "></div>
+          <button className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer hover:scale-125 ease-in-out ">
+            SUBMIT
+          </button>
         </div>
       </form>
     </div>

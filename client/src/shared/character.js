@@ -1,6 +1,6 @@
 // area where we can store player character and opponent character stats inside an array of objects
 // TODOS need to swap the values and the img presets for each of the characters, need to add IDs
-export const characterPresets = [
+export const playerStats = [
     {
       name: 'Skeleton Man',
       img: '/assets/megaman.png',

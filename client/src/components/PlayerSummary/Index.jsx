@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // this is where the Name, Level, and an HP bar will be living. Will be above the sprite of the actual character.
 import { Bar } from 'components';
 import styles from './styles.module.css';
