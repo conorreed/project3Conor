@@ -7,7 +7,7 @@ import {
     attack,
     playerStats,
     opponentStats,
-  } from 'shared';
+  } from '../shared';
   import { useEffect, useState } from 'react';
   
   export const useBattleSequence = sequence => {
