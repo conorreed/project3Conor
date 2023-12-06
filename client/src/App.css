@@ -99,3 +99,27 @@ input {
 button:hover {
   background-color: #45a049;
 } */
+
+.victory-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: green;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Add any other styles you want */
+}
+
+.health-bar-container {
+  background-color: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.health-bar {
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}

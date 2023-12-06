@@ -12,12 +12,11 @@ const Header = () => {
   };
   return (
     <header className="bg-gray-900 flex justify-between py-4">
-        {/* <h1 className="text-blue-100">Dark Lord: Evilution</h1> */}
-        <p className="text-blue-100 mx-4">something something 
-        <br />monsterGameTitleHere <br />
-        {/* something something <br />
-        Dark Lord: Evilution */}
-        </p>
+        <div className="flex items-center ml-4">
+    {/* Replace the following line with the actual path to your game logo */}
+    <img src="/gif/flames.gif" alt="Game Logo" className="w-10 h-10 mr-2" />
+    <h1 className="text-blue-100 text-xl font-bold">Monster Mayhem</h1>
+  </div>
         <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
         <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
         <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
