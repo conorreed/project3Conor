@@ -23,10 +23,11 @@ const userSchema = new Schema({
 
     //TODO: double check save character logic
     //maybe characters: [Character.schema],
+    //TODO unique false if want doups
     characters: [
       {
     type: Schema.Types.ObjectId,
-    ref: 'Characters',
+    ref: 'Character',
     }
     ]
   },

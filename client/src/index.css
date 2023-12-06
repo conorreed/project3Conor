@@ -27,6 +27,24 @@
 
 }
 
+.battleBackground {
+  background-image: url(./images/backgroundBattle.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* .rain {
+  background-image: url(./images/battle);
+  background-size: contain;
+  height: 585px;
+  background-repeat: no-repeat
+} */
+
+.charContainer {
+  margin-right: 25rem;
+  margin-left: 35rem;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

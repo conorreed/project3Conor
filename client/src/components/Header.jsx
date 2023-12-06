@@ -5,15 +5,16 @@ import "../App.css";
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 flex justify-between py-4">
+    <header className="bg-gray-900 flex justify-between py-4">
         {/* <h1 className="text-blue-100">Dark Lord: Evilution</h1> */}
         <p className="text-blue-100 mx-4">something something 
         <br />monsterGameTitleHere <br />
-        something something <br />
-        Dark Lord: Evilution</p>
-        <img src="/gif/flames.gif" alt="flames" style={{width: '50px'}}/>
-        <img src="/gif/flames.gif" alt="flames" style={{width: '50px'}}/>
-        <img src="/gif/flames.gif" alt="flames" style={{width: '50px'}}/>
+        {/* something something <br />
+        Dark Lord: Evilution */}
+        </p>
+        <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
+        <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
+        <img src="/gif/flames.gif" alt="flames" style={{width: '50px', height: "50px"}}/>
 
 
         <nav>

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const GameStart = () => {
   return (
-    <main className="flex justify-center">
-      <div className="bg-gray-800 min-h-screen min-w-full text-center pt-20">
+    <main className="flex justify-center ">
+      <div className="bg-gray-800 min-h-screen min-w-full text-center flex justify-center pt-20">
+        <div className='shadow-lg bg-[rgba(97,59,96,0.7)] p-10 rounded-xl my-2 flex flex-col justify-center items-center w-[25rem] h-[40rem]'>
         <h1 className="text-blue-100 mx-4 pb-4">Tutorial</h1>
         <p className="text-blue-100 mx-4">
           Alright so you play the game. Its very fun for you. Trust.
@@ -26,6 +27,7 @@ const GameStart = () => {
             START
           </button>
           </Link>
+        </div>
         </div>
       </div>
     </main>
