@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 //TODO maybe try to hide the header here?
@@ -23,19 +24,22 @@ const Battle = () => {
             // className="flex flex-row "
           >
             <p className="py-1.5 text-fuchsia-400">hp and better looking card here</p>
-            <div className="flex flex-row  justify-between rounded-md h-[70px] bg-slate-400 mb-">
+            <div className="flex flex-row  justify-between rounded-md h-[70px] bg-slate-400 ">
               
               <button className="bg-red-500 text-white px-4 py-2 rounded">
                 Attack
               </button>
-              <button className="bg-red-500 text-white px-4 py-2 rounded">
+              <Link to="/Lair"><button className="bg-red-500 text-white px-4 py-2 rounded">
                 Run
-              </button>
+              </button></Link>
             </div>
-            <div className="monster flex flex-row ">
+
+            {/* i cant remember how to do it but we can toggle the "hidden" class based off what char the user chooses */}
+            
+            <div className="monster flex flex-row justify-end">
               <img src="/gif/monsters/ghost.gif" alt="ghost" className=" hidden" />
               <img src="/gif/monsters/skel.gif" alt="skel"  className="hidden"/>
-              <img src="/gif/monsters/frog.gif" alt="frog" />
+              <img src="/gif/monsters/frog.gif" alt="frog" className="" />
               <img
                 src="/gif/monsters/bat.gif"
                 alt="bat" className="hidden" />
