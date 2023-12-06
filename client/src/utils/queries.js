@@ -6,6 +6,11 @@ query singleUser($id: ID!) {
     _id
     email
     username
+    characters {
+      _id
+      image
+    }
+
   }
 }
 `;
@@ -16,6 +21,10 @@ query Users {
       _id
       email
       username
+      characters {
+      _id
+      image
+    }
     }
   },
   `;
