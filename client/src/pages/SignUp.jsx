@@ -1,74 +1,80 @@
-import React from "react";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
 
-function SignUp() {
-  const [state, setState] = React.useState({
-    email: "",
-    password: ""
-  });
+function Signup() {
+  const [formState, setFormState] = useState({ username: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
 
-  const handleChange = (evt) => {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value,
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        username: formState.username,
+        email: formState.email,
+        password: formState.password,
+      },
+      // onCompleted: (data) => {
+      //   console.log("You Signed Up!!!:", data);
+      // },
+ 
     });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
-  const handleOnSubmit = (evt) => {
-    evt.preventDefault();
-
-    const { email, password, confirmPassword } = state;
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
-    }
-
-    // Perform sign-up logic here with email and password
-
-    alert(`You are signing up with email: ${email} and password: ${password}`);
-
-    // Reset the state after submission
-    setState({
-      email: "",
-      password: "",
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
     });
   };
-
+// how to get link working to go to login page
   return (
-    <div className="form-container sign-up-container h-screen w-screen  text-blue-100 bg-gray-800 flex items-center">
-      
-      <form className="flex flex-col items-center" onSubmit={handleOnSubmit}>
-        <h1>Sign up</h1>
-        <span>Create an account</span>
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={state.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <div className="relative inline-flex  group m-5">
-          <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt "></div>
-          <button className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer hover:scale-125 ease-in-out ">
-           
-            SIGN UP!
-          </button>
+    <div className="container my-1">
+      <Link to="/login">← Go to Login</Link>
+
+      <h2>Signup</h2>
+      <form onSubmit={handleFormSubmit}>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="username">Username:</label>
+          <input
+            placeholder="YourUsername"
+            name="username"
+            type="text"
+            id="username"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="email">Email:</label>
+          <input
+            placeholder="youremail@test.com"
+            name="email"
+            type="email"
+            id="email"
+            onChange={handleChange}
+          />
+          </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="password">Password:</label>
+          <input
+            placeholder="******"
+            name="password"
+            type="password"
+            id="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row flex-end">
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default SignUp;
-
-
-
-// template pulled from google
+export default Signup;

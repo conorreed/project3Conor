@@ -113,8 +113,8 @@ const resolvers = {
     //   throw AuthenticationError;
     // },
 
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw AuthenticationError;
@@ -123,7 +123,7 @@ const resolvers = {
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw AuthenticationError('wrong');
       }
 
       const token = signToken(user);

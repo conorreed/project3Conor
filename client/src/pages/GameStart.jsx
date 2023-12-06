@@ -1,4 +1,5 @@
 //TODO figure out why it hates apostrophes in the p tag and li tag
+import { Link } from 'react-router-dom';
 
 const GameStart = () => {
   return (
@@ -19,10 +20,12 @@ const GameStart = () => {
         </ul>
         <div className="relative inline-flex  group">
           <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt "></div>
+          <Link to="/lair">
           <button className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 cursor-pointer hover:scale-125 ease-in-out ">
-           
+          
             START
           </button>
+          </Link>
         </div>
       </div>
     </main>
