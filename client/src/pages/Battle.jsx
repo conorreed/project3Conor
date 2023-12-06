@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import {wait} from "../shared"
 // Card component
 const Card = ({ title, health, description }) => (
   <div className="bg-white rounded-md p-4 mb-4 text-black">
@@ -16,7 +17,7 @@ const Battle = () => {
   const [enemyHealth, setEnemyHealth] = useState(100);
   const [victory, setVictory] = useState(false);
 
-  const handleAttack = () => {
+  const handleAttack = async () => {
     const playerDamage = 10;
     const newEnemyHealth = Math.max(0, enemyHealth - playerDamage);
     setEnemyHealth(newEnemyHealth);
@@ -25,8 +26,20 @@ const Battle = () => {
 
     if (newEnemyHealth === 0) {
       setVictory(true);
+    } else {
+      // Simulating enemy's counterattack with a pause
+      await wait(1000); // Adjust the pause duration as needed
+
+      const enemyAttackDamage = 8; // Adjust the enemy's attack damage as needed
+      const newPlayerHealth = Math.max(0, playerHealth - enemyAttackDamage);
+      setPlayerHealth(newPlayerHealth);
+
+      if (newPlayerHealth === 0) {
+        setVictory(false);
+      }
     }
   };
+
   const handleRestart = () => {
     setPlayerHealth(100);
     setEnemyHealth(100);
@@ -80,31 +93,16 @@ const Battle = () => {
 
           <div className="flex flex-col justify-between">
             <Card
-              title="Enemy Card"
+              title="Sir Fred"
               health={enemyHealth}
-              description="im the enemy and i suck eggs"
+              description="YOU SHOULD'VE USED THE PROXY!"
             />
 
             <div className="villagers flex flex-row items-end ">
 
               <img
-                src="/gif/townsFolk/man.gif"
+                src="/gif/townsFolk/knight.gif"
                 alt="woman-blue"
-                style={{ width: "140px", height: "170px" }}
-              />
-              <img
-                src="/gif/townsFolk/woman-blue.gif"
-                alt="woman-blue"
-                style={{ width: "90px", height: "170px" }}
-              />
-              <img
-                src="/gif/townsFolk/woman-nun.gif"
-                alt="woman-nun"
-                style={{ width: "100px", height: "170px" }}
-              />
-              <img
-                src="/gif/townsFolk/mayor.gif"
-                alt="mayor"
                 style={{ width: "140px", height: "170px" }}
               />
             </div>
