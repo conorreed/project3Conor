@@ -1,20 +1,29 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import '../app.css';
 
-// Card component
-const Card = ({ title, health, description }) => (
-  <div className="bg-white rounded-md p-4 mb-4 text-black">
-    <h2 className="text-xl font-bold mb-2">{title}</h2>
-    <p>Health: {health}</p>
-    <p>{description}</p>
-  </div>
-);
+// Card component with Health Bar
+const Card = ({ title, health, description }) => {
+  const healthBarColor = health > 50 ? 'green' : 'red';
+
+  return (
+    <div className="bg-white rounded-md p-4 mb-4 text-black">
+      <h2 className="text-xl font-bold mb-2">{title}</h2>
+      <div className="health-bar-container mb-2">
+        <div className="health-bar" style={{ width: `${health}%`, backgroundColor: healthBarColor }} />
+      </div>
+      <p>Health: {health}</p>
+      <p>{description}</p>
+    </div>
+  );
+};
 
 const Battle = () => {
   const [effect, setEffect] = useState(false);
   const [playerHealth, setPlayerHealth] = useState(100);
   const [enemyHealth, setEnemyHealth] = useState(100);
   const [victory, setVictory] = useState(false);
+  const [showVictoryText, setShowVictoryText] = useState(false);
 
   const handleAttack = () => {
     const playerDamage = 10;
@@ -24,35 +33,37 @@ const Battle = () => {
     setTimeout(() => setEffect(false), 500);
 
     if (newEnemyHealth === 0) {
-      setVictory(true);
+      setShowVictoryText(true);
     }
   };
+
   const handleRestart = () => {
     setPlayerHealth(100);
     setEnemyHealth(100);
     setVictory(false);
+    setShowVictoryText(false);
   };
 
   return (
     <div className="battleBackground h-screen w-screen flex text-blue-100 bg-gray-800">
-      <div className="flex flex-col justify-end text-center w-screen">
-        <div className="charContainer flex flex-row justify-between mb-5">
-          <div className="p-4 flex flex-col" onClick={handleAttack}>
-            <Card
-              title="Player Card"
-              health={playerHealth}
-              description="Froggo the Destroyer"
-            />
-            <div className={`flex flex-row justify-between rounded-md h-[70px] bg-slate-400 `}>
+    <div className="flex flex-col justify-end text-center w-screen">
+      <div className="charContainer flex flex-row justify-between mb-5">
+        <div className="p-4 flex flex-col" onClick={handleAttack}>
+          <Card
+            title="Froggo"
+            health={playerHealth}
+            description="Froggo the Destroyer"
+          />
+          <div className={`flex flex-row justify-between rounded-md h-[70px] bg-slate-400 `}>
+            <button className="bg-red-500 text-white px-4 py-2 rounded">
+              Attack
+            </button>
+            <Link to="/Lair">
               <button className="bg-red-500 text-white px-4 py-2 rounded">
-                Attack
+                Run
               </button>
-              <Link to="/Lair">
-                <button className="bg-red-500 text-white px-4 py-2 rounded">
-                  Run
-                </button>
-              </Link>
-            </div>
+            </Link>
+          </div>
 
             <div className="monster flex flex-row justify-end">
               <img
@@ -80,9 +91,9 @@ const Battle = () => {
 
           <div className="flex flex-col justify-between">
             <Card
-              title="Enemy Card"
+              title="Enemy"
               health={enemyHealth}
-              description="im the enemy and i suck eggs"
+              description="Im the enemy and I suck eggs"
             />
 
             <div className="villagers flex flex-row items-end ">
@@ -110,15 +121,21 @@ const Battle = () => {
             </div>
 
           </div>
+        </div>
+        <h1 className={`p-5 ${victory && !showVictoryText ? 'hidden' : ''}`}>
+          {victory ? 'You won!' : '-'}
+        </h1>
+
+        {showVictoryText && (
+          <div className="victory-text">
+            <p>YOU WON!!</p>
+            <button
+              className="bg-green-500 text-white px-4 py-2 rounded"
+              onClick={handleRestart}
+            >
+              Restart Battle
+            </button>
           </div>
-        <h1 className="p-5">{victory ? "You won!" : "-"}</h1>
-        {victory && (
-          <button
-            className="bg-green-500 text-white px-4 py-2 rounded"
-            onClick={handleRestart}
-          >
-            Restart Battle
-          </button>
         )}
       </div>
     </div>
