@@ -5,7 +5,7 @@
 const Footer = () => {
   return (
     
-    <div className="footer bg-gray-800 flex justify-between py-4 w-100">
+    <div className="footer bg-gray-900 flex justify-between py-4 w-100">
       <p>Hi :) im the footer</p>
       <p>Prob some github links here or something</p>
     </div>

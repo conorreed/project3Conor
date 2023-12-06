@@ -12,7 +12,7 @@ const Battle = () => {
       {/* <h1 className="p-5">Didnt get to this yet</h1> */}
 
       <div className="  flex flex-col justify-end text-center  w-screen">
-        <div className=" charContainer  flex flex-row justify-between  ">
+        <div className=" charContainer  flex flex-row justify-between mb-5 ">
           {/* margin for charContainer is in index css. couldnt get inline to work right */}
           <div
             id="animatedImage"
@@ -49,7 +49,7 @@ const Battle = () => {
           {/* <img src="/gif/flames.gif" alt="flames" style={{ width: "50px" }} /> */}
             <div className="flex flex-col justify-between">
             <p className=" text-fuchsia-400">hp and better looking card here</p>
-          <div className="flex flex-row items-end ">
+          <div className="villagers flex flex-row items-end ">
             
             <img
               src="/gif/townsFolk/man.gif"
