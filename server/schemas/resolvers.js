@@ -29,17 +29,6 @@ const resolvers = {
       return { token, user };
     },
 
-    //not sure if we need this. prob just update character?
-    // updateUser: async (parent, args, context) => {
-    // console.log(context);
-    // if (context.user) {
-    // return await User.findByIdAndUpdate({_id}, args, {
-    //   new: true,
-    // });
-    // }
-
-    // throw AuthenticationError;
-    // },
 
     updateUser: async (parent, args, context) => {
       //TODO bring back context when login on front end is done
@@ -91,31 +80,6 @@ const resolvers = {
       );
       return updatedUser;
     },
-
-    //TODO remember how to delete and update.
-    //*can i just:
-
-    //*    removeCharacter: async (parent, { ID }) => {
-    //*    return Character.findOneAndDelete({ _id: ID });
-    //*    },
-
-    //*or do i have to :
-    // removeCharacter: async (parent, { _id }, context) => {
-    //   if (context.user) {
-    //     const character = await Character.findOneAndDelete({
-    //       _id: _id,
-
-    //     });
-
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { character: character._id } }
-    //     );
-
-    //     return character;
-    //   }
-    //   throw AuthenticationError;
-    // },
 
     login: async (parent, { username, password }) => {
       const user = await User.findOne({ username });

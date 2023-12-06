@@ -8,7 +8,7 @@ const Footer = () => {
       <p style={{ color: 'white' }}>Welcome to the WARZONE</p>
       <p style={{ color: 'white' }}>
         <a
-          href="https://github.com/your-github-username/your-repo-name"
+          href="https://github.com/MWandall/project3"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center"
