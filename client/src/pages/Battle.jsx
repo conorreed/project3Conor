@@ -36,6 +36,7 @@ const Battle = () => {
 
     if (newEnemyHealth === 0) {
       setVictory(true);
+      setShowVictoryText(true);
     } else {
       // Simulating enemy's counterattack with a pause
       await wait(1000); // Adjust the pause duration as needed
@@ -47,7 +48,7 @@ const Battle = () => {
       if (newPlayerHealth === 0) {
         setVictory(false);
       }
-      setShowVictoryText(true);
+      
     }
   };
 
