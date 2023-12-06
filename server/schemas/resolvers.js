@@ -44,10 +44,10 @@ const resolvers = {
     updateUser: async (parent, args, context) => {
       //TODO bring back context when login on front end is done
       // console.log(context);
-      // if (context.user) {
+      if (context.user) {
       const updatedUser = await User.findByIdAndUpdate(
-        // context.user._id,
-        "656df7c7cc2159f78cb01454",
+        context.user._id,
+        // "656e248f930f2cbb52860f39",
         args,
         {
           new: true,
@@ -55,20 +55,24 @@ const resolvers = {
       );
       // console.log();
       return updatedUser;
-      // }
+      }
 
-      // throw new AuthenticationError('User not authenticated');
+      throw new AuthenticationError('User not authenticated');
     },
     deleteUser: async (parent, args, context) => {
       //TODO get context
+      if (context.user) {
       const deletedUser = await User.findByIdAndDelete(
-        "656e087bf36b5b8ae48bb0b7",
+        context.user._id,
+        // "656e087bf36b5b8ae48bb0b7",
         args,
         {
           new: true,
         }
       );
+      }
       return deletedUser;
+
     },
 
     // TODO addCharacter
