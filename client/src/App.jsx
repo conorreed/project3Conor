@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import Header from './components/Header.jsx';
 // import Login from './pages/Login.jsx';
 // import Home from './pages/Home';
-// import Nav from './components/Nav';
+
 // import { StoreProvider } from './utils/GlobalState';
 
 const httpLink = createHttpLink({
@@ -40,12 +40,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Header/>
-      
-      {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-        </Routes> */}
+  
         <Outlet />
       <Footer/>
     </ApolloProvider>
