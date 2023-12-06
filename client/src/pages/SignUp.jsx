@@ -37,6 +37,7 @@ function SignUp() {
 
   return (
     <div className="form-container sign-up-container h-screen w-screen  text-blue-100 bg-gray-800 flex items-center">
+      
       <form className="flex flex-col items-center" onSubmit={handleOnSubmit}>
         <h1>Sign up</h1>
         <span>Create an account</span>
