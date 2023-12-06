@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Card component
 const Card = ({ title, health, description }) => (
-  <div className="bg-white rounded-md p-4 mb-4">
+  <div className="bg-white rounded-md p-4 mb-4 text-black">
     <h2 className="text-xl font-bold mb-2">{title}</h2>
     <p>Health: {health}</p>
     <p>{description}</p>
