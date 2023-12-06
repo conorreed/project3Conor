@@ -14,6 +14,8 @@ const Battle = () => {
       <div className="  flex flex-col justify-end text-center  w-screen">
         <div className=" charContainer  flex flex-row justify-between mb-5 ">
           {/* margin for charContainer is in index css. couldnt get inline to work right */}
+
+          
           <div
             id="animatedImage"
             className={`${effect && "animate-wiggle"}  p-4 flex flex-col`}
