@@ -9,9 +9,8 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className=" flex flex-col justify-items-center text-center h-screen w-screen  text-blue-100 bg-gray-800">
-      <h1 className=" text-fuchsia-500">THAT TIME I GOT <span className=" text-white">REINCARNATED</span> AS A WAY TOO LONG <span className=" text-white">TITLE</span> FOR A SILLY GAME</h1>
-      <h1>...or monster attck</h1>
-      <h1 className='pb-5'>...whatever floats your boat</h1>
+      <h1 className=" text-fuchsia-500 pb-[5rem]">MONSTER MAYHEM</h1>
+      
       <div className=" flex flex-row justify-content-center ">
       <img src="/gif/monsters/ghost.gif" alt="ghost" />
       <img src="/gif/monsters/skel.gif" alt="skel" />
