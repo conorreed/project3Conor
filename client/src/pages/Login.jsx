@@ -57,6 +57,7 @@ const Login = () => {
           name="username"
           value={state.username}
           onChange={handleChange}
+          className='text-black font-bold'
         />
         <input
           type="password"
@@ -64,6 +65,7 @@ const Login = () => {
           placeholder="Password"
           value={state.password}
           onChange={handleChange}
+          className='text-black font-bold'
         />
         <div className="relative inline-flex group m-5">
           <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt "></div>

@@ -47,6 +47,7 @@ function Signup() {
             type="text"
             id="username"
             onChange={handleChange}
+            className='text-black font-bold'
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -57,6 +58,7 @@ function Signup() {
             type="email"
             id="email"
             onChange={handleChange}
+            className='text-black font-bold'
           />
           </div>
         <div className="flex-row space-between my-2">
@@ -67,6 +69,7 @@ function Signup() {
             type="password"
             id="password"
             onChange={handleChange}
+            className='text-black font-bold'
           />
         </div>
         <div className="relative inline-flex group m-5">

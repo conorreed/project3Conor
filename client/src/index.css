@@ -40,10 +40,10 @@
   background-repeat: no-repeat
 } */
 
-.charContainer {
+/* .charContainer {
   margin-right: 25rem;
   margin-left: 35rem;
-}
+} */
 
 a {
   font-weight: 500;
@@ -88,6 +88,34 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.fireball {
+  /* display: block; */
+  /* position: absolute; */
+  width: 50px;
+  height: 50px;
+}
+  /* animation: fireballAnimation 2s linear;  */
+/* }
+.fireball-active {
+  display: none;
+} */
+
+/* @keyframes fireballAnimation {
+  0% {
+    transform: translateX(0) scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%) scaleX(-1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+    opacity: 1;
+  }
+} */
+
+
 
 @media (prefers-color-scheme: light) {
   :root {

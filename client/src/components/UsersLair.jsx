@@ -77,16 +77,31 @@ const UserLair = () => {
   return (
     <article className="">
       <div className=" shadow-lg bg-[rgba(97,59,96,0.7)] p-10 rounded-xl my-2 flex flex-row justify-between items-center w-full h-[15rem]">
+        <div className="flex flex-col items-center">
         <h2 className="text-white font-bold text-2xl">This you :</h2>
+        <button
+              onClick={handleDeleteUser}
+              className="bg-red-500 flex flex-row text-white px-4 mb py-2 rounded  cursor-pointer hover:scale-125 transition-all ease-in-out"
+            >
+              delete?
+              <div className="text-2xl pl-1">
+                <IoSadOutline />
+              </div>
+            </button>
+            </div>
 
-        <div className=" w-[35rem] h-[10rem] rounded-xl shadow-lg bg-slate-300 ">
-          <div className="flex flex-row justify-between m-2">
-            <h2>
-              WELCOME {userData.username}
+        <div className=" w-[35rem] h-[10rem] rounded-xl shadow-lg bg-slate-300 flex ">
+          <div className="flex flex-row justify-between items-center m-2">
+          <div className="flex flex-col items-center pr-2">
+            <h1 >
+              HI,
               {/* {userData.characters[0].image} */}
-            </h2>
-            <form action="onSubmit={handleFormSubmit}">
-              <label htmlFor="update">UPDATE USERNAME</label>
+            </h1>
+            <h1> {userData.username}!</h1>
+            </div>
+            <div>
+            <form action="onSubmit={handleFormSubmit}" >
+              <label className=" font-bold" htmlFor="update">UPDATE USERNAME</label>
               <input
                 type="text"
                 value={newUsername}
@@ -101,20 +116,25 @@ const UserLair = () => {
                 update
               </button>
             </form>
-            <button
-              onClick={handleDeleteUser}
-              className="bg-red-500 flex flex-row text-white px-4 py-2 rounded cursor-pointer hover:scale-125 transition-all ease-in-out"
-            >
-              delete
-              <div className="text-2xl pl-1">
-                <IoSadOutline />
-              </div>
-            </button>
+
+
+            </div>
           </div>
         </div>
 
-        <h2 className="text-white font-bold text-2xl">This them :</h2>
+        <h2 className="text-white font-bold text-2xl">Ya Monsters: :</h2>
         <div className=" w-[35rem] h-[10rem] rounded-xl shadow-lg bg-slate-300 ">
+        <button className=" w-[15rem] shadow-lg bg-slate-300 cursor-pointer hover:scale-125 transition-all ease-in-out">
+                <div className="flex flex-row justify-between">
+                  <img src="/gif/monsters/frog.gif" alt="frog" />
+                  
+                  <ul>
+                    <li>HP : 100</li>
+                    <li>ATTK : 10</li>
+                  </ul>
+                </div>
+                <p className="font-bold">Fraowg</p>
+              </button>
           <div className="flex flex-row justify-between m-2"></div>
         </div>
       </div>

@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { wait } from "../shared/helpers"
 import { Link } from "react-router-dom";
-import '../app.css';
+import Fireball from "../components/fireball";
+
 
 // Card component with Health Bar
 const Card = ({ title, health, description }) => {
@@ -22,6 +23,7 @@ const Card = ({ title, health, description }) => {
 
 const Battle = () => {
   const [effect, setEffect] = useState(false);
+  const [cpuEffect, setCpuEffect] = useState(false);
   const [playerHealth, setPlayerHealth] = useState(100);
   const [enemyHealth, setEnemyHealth] = useState(100);
   const [victory, setVictory] = useState(false);
@@ -41,6 +43,9 @@ const Battle = () => {
       // Simulating enemy's counterattack with a pause
       await wait(1000); // Adjust the pause duration as needed
 
+      
+      setCpuEffect(true);
+      setTimeout(() => setCpuEffect(false), 500);
       const enemyAttackDamage = 8; // Adjust the enemy's attack damage as needed
       const newPlayerHealth = Math.max(0, playerHealth - enemyAttackDamage);
       setPlayerHealth(newPlayerHealth);
@@ -61,9 +66,13 @@ const Battle = () => {
 
   return (
     <div className="battleBackground h-screen w-screen flex text-blue-100 bg-gray-800">
-    <div className="flex flex-col justify-end text-center w-screen">
-      <div className="charContainer flex flex-row justify-between mb-5">
-        <div className="p-4 flex flex-col" onClick={handleAttack}>
+    <div className="flex flex-col justify-between text-center w-screen">
+
+      <div><h1 className="spacer h-[22rem]"> </h1></div>
+      
+      <div className="charContainer flex flex-row justify-center">
+        <div className="spacer"></div>
+        <div className="  justify-between flex flex-col" onClick={handleAttack}>
           <Card
             title="Froggo"
             health={playerHealth}
@@ -84,7 +93,7 @@ const Battle = () => {
               <img
                 src="/gif/monsters/ghost.gif"
                 alt="ghost"
-                className={` ${effect && "animate-wiggle"}`}
+                className={` hidden ${effect && "animate-wiggle"}`}
               />
               <img
                 src="/gif/monsters/skel.gif"
@@ -94,7 +103,7 @@ const Battle = () => {
               <img
                 src="/gif/monsters/frog.gif"
                 alt="frog"
-                className={`hidden ${effect && "animate-wiggle"}`}
+                className={` ${effect && "animate-wiggle"}`}
               />
               <img
                 src="/gif/monsters/bat.gif"
@@ -104,26 +113,34 @@ const Battle = () => {
             </div>
           </div>
 
+          <div className="flex flex-row justify-end items-end w-[15rem]">
+          <Fireball />
+          </div>
+
           <div className="flex flex-col justify-between">
             <Card
               title="Sir Fred"
               health={enemyHealth}
               description="YOU SHOULD'VE USED THE PROXY!"
             />
-
+            
             <div className="villagers flex flex-row items-end ">
-
+            
               <img
                 src="/gif/townsFolk/knight.gif"
-                alt="woman-blue"
+                alt="knight"
                 style={{ width: "140px", height: "170px" }}
+                className={` ${cpuEffect && "animate-wiggle2"}`}
+               
               />
             </div>
+            
 
           </div>
+          <div className="spacer"></div>
         </div>
         <h1 className={`p-5 ${victory && !showVictoryText ? 'hidden' : ''}`}>
-          {victory ? 'You won!' : '-'}
+          {victory ? 'You won!' : ' '}
         </h1>
 
         {showVictoryText && (

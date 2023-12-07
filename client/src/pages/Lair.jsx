@@ -17,7 +17,7 @@ const Lair = () => {
           <div className=" flex mx-[25rem] p-10 h-[10rem]">
             <Link to="/Battle">
               <button className="shadow-lg bg-slate-300 cursor-pointer hover:scale-125 transition-all ease-in-out">
-              Bowser's Castle
+              Bowsers Castle
               </button>
             </Link>
           </div>
@@ -33,8 +33,8 @@ const Lair = () => {
                   <img src="/gif/monsters/frog.gif" alt="frog" />
                   <div className="text-3xl"><IoLockOpen /></div>
                   <ul>
-                    <li>HP :</li>
-                    <li>ATTK :</li>
+                    <li>HP : 100</li>
+                    <li>ATTK : 10</li>
                   </ul>
                 </div>
                 <p className="font-bold">Fraowg</p>
@@ -45,8 +45,8 @@ const Lair = () => {
                   <img src="/gif/monsters/ghost.gif" alt="ghost" />
                  <div className="text-3xl"><IoLockClosedSharp /></div> 
                   <ul>
-                    <li>HP :</li>
-                    <li>ATTK :</li>
+                    <li>HP : 80</li>
+                    <li>ATTK : 25</li>
                   </ul>
                 </div>
                 <p className="font-bold">toshG</p>
@@ -57,8 +57,8 @@ const Lair = () => {
                   <img src="/gif/monsters/bat.gif" alt="bat" />
                   <div className="text-3xl"><IoLockClosedSharp /></div> 
                   <ul>
-                    <li>HP :</li>
-                    <li>ATTK :</li>
+                    <li>HP : 125</li>
+                    <li>ATTK :20</li>
                   </ul>
                 </div>
                 <p className="font-bold">EEP</p>
@@ -68,8 +68,8 @@ const Lair = () => {
                   <img src="/gif/monsters/skel.gif" alt="skel" />
                   <div className="text-3xl"><IoLockClosedSharp /></div> 
                   <ul>
-                    <li>HP :</li>
-                    <li>ATTK :</li>
+                    <li>HP : 0.1</li>
+                    <li>ATTK : 100,000</li>
                   </ul>
                 </div>
 
