@@ -17,7 +17,7 @@ This is a MERN stack project where you can sign up, choose a monster, and fight 
 Go to website and log in
 
 ## Usage
-(insert deployed link)
+https://agile-oasis-62769-7a2647b7d4b6.herokuapp.com/
 
 ## License
 Refer to the [License file](LICENSE).
